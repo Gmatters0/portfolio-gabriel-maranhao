@@ -1,0 +1,290 @@
+{
+  "nome": "Gabriel Maranhão",
+  "headline": "Desenvolvedor de Software & Analista de Gestão de Projetos",
+  "localizacao": "Goiânia-GO",
+  "contato": {
+    "whatsapp": "+5562981470747",
+    "whatsapp_link": "https://wa.me/5562981470747",
+    "email": "gabrielmaranhao.cpm@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/gabriel-maranhao-correia",
+    "github": "https://github.com/Gmatters0"
+  },
+  "resumo": "Profissional em transição de Desenvolvimento de Software para Gestão de Projetos em TI, com experiência prática em levantamento de requisitos, definição de escopo, planejamento de prazos e comunicação com stakeholders. Atua na gestão ponta a ponta de projetos web na AWT Development e na sustentação de sistema corporativo legado na Tron Informática. Combina base técnica sólida (React, TypeScript, SQL) com formação em Gestão de Projetos em TI (Fundação Bradesco) e vivência didática como instrutor, unindo visão de negócio, comunicação clara e organização para conduzir projetos de tecnologia do planejamento à entrega.",
+  "habilidades": {
+    "gestao_de_projetos": [
+      "Levantamento de requisitos",
+      "Definição de escopo",
+      "Planejamento de prazos e custos",
+      "Comunicação com stakeholders",
+      "Metodologias Ágeis (Scrum/Kanban)",
+      "Documentação de projetos"
+    ],
+    "ferramentas_de_gestao": [
+      "Jira",
+      "Trello",
+      "ClickUp",
+      "Microsoft Azure DevOps",
+      "Obsidian",
+      "Pacote Office"
+    ],
+    "tecnico": [
+      "HTML/CSS",
+      "TypeScript",
+      "React.js",
+      "Next.js",
+      "Node.js",
+      "Python",
+      "Delphi",
+      "SQL",
+      "API REST",
+      "Git/GitHub",
+      "Figma",
+      "UI/UX e Prototipagem"
+    ],
+    "idiomas": [
+      "Português – Nativo",
+      "Inglês – B1/B2"
+    ],
+    "outras": [
+      "Comunicação clara",
+      "Resolução de Problemas",
+      "Trabalho em Equipe",
+      "Adaptabilidade",
+      "Organização",
+      "Didática",
+	  "Inteligência Emocional"
+    ]
+  },
+  "pilares_de_atuacao": [
+    {
+      "titulo": "Desenvolvimento de Software",
+      "descricao": "Desenvolvimento de software com TypeScript, React e Next.js, incluindo definição de arquitetura e modelagem de banco de dados, além de manutenção de sistemas em Delphi e SQL."
+    },
+    {
+      "titulo": "Debug e Investigação de Bugs",
+      "descricao": "Sustentação de sistema contábil legado em produção (Delphi 10.3 + Firebird SQL), análise e otimização de procedures e triggers para garantir estabilidade e continuidade do negócio."
+    },
+    {
+      "titulo": "Gestão de Projetos",
+      "descricao": "Condução ponta a ponta de projetos web: levantamento de requisitos, definição de escopo, planejamento de prazos e custos, e comunicação com clientes e stakeholders."
+    },
+    {
+      "titulo": "UI/UX (Research e Benchmarking)",
+      "descricao": "Design e prototipagem em Figma para projetos web, com foco em usabilidade de interfaces e pesquisa de referências de mercado."
+    },
+    {
+      "titulo": "Docência e Suporte",
+      "descricao": "Instrutor de programação e robótica para crianças e adolescentes, com currículo estruturado e comunicação técnica e didática aplicada."
+    }
+  ],
+  "especializando_atualmente": [
+    {
+      "area": "Gestão de Projetos",
+      "detalhes": "Certificado de Gestão de Projetos em TI pela Fundação Bradesco (2026). Uso de Jira, Trello, ClickUp e Microsoft Azure DevOps, com metodologias ágeis (Scrum/Kanban) aplicadas na gestão ponta a ponta de projetos web na AWT Development."
+    },
+    {
+      "area": "Docência",
+      "detalhes": "Instrutor de Programação e Robótica na CTRL+Play, conduzindo currículo estruturado (lógica de programação, HTML/CSS/JS, Scratch, Arduino, React, Git) para turmas pequenas de crianças e adolescentes."
+    }
+  ],
+  "experiencias": [
+    {
+      "cargo": "Sócio Fundador e Gerente de Projetos (COO)",
+      "empresa": "AWT Development",
+      "local": "Goiânia-GO",
+      "periodo": "Jan 2025 – Atual",
+      "bullets": [
+        "Lidero a gestão ponta a ponta de projetos web (sites, sistemas e e-commerces): levantamento de requisitos, definição de escopo, planejamento de prazos/custos e comunicação com clientes e stakeholders.",
+        "Entreguei 3 projetos concluídos dentro do escopo definido — 2 landing pages e 1 refatoração/manutenção completa de e-commerce — com validação positiva dos clientes.",
+        "Conduzo atualmente 2 projetos em desenvolvimento: um sistema imobiliário (CRM, catálogo de imóveis e ferramentas de inteligência de negócio para investidores) e um aplicativo social de contagem de pontos para board games.",
+        "Utilizo Trello para gestão de tarefas e sprints, e Discord para comunicação de equipe e controle de builds/PRs.",
+        "Também responsável pelo design, prototipagem (Figma) e desenvolvimento front-end (TypeScript, React, Next.js, Tailwind)."
+      ]
+    },
+    {
+      "cargo": "Desenvolvedor de Software",
+      "empresa": "Tron Informática",
+      "local": "Goiânia-GO",
+      "periodo": "Mar 2025 – Atual",
+      "bullets": [
+        "Mantenho e evoluo sistema contábil legado (Delphi 10.3 + Firebird SQL), traduzindo regras de negócio contábeis complexas em soluções técnicas escaláveis e seguras.",
+        "Implemento projetos previamente levantados e especificados por analistas de negócio, sendo responsável pelas etapas de desenvolvimento, testes e validação final.",
+        "Analiso e otimizo procedures e triggers SQL, garantindo estabilidade e continuidade de sistema crítico em produção."
+      ]
+    },
+    {
+      "cargo": "Instrutor de Programação e Robótica",
+      "empresa": "CTRL+Play",
+      "local": "Goiânia-GO",
+      "periodo": "Mai 2026 – Atual",
+      "bullets": [
+        "Planejo e conduzo currículo estruturado (lógica de programação, HTML/CSS/JS, Scratch, Arduino, React, Git) para turmas pequenas de crianças e adolescentes.",
+        "Amplio o currículo com Python, Node.js, NoSQL, CRUD, Ciência de Dados e Machine Learning para turmas mais avançadas.",
+        "Desenvolvo comunicação técnica e didática aplicada, competências diretamente transferíveis para gestão de times e stakeholders."
+      ]
+    },
+    {
+      "cargo": "Estagiário de TI",
+      "empresa": "FGR Incorporações",
+      "local": "Goiânia-GO",
+      "periodo": "Mar 2024 – Mar 2025",
+      "bullets": [
+        "Conduzi reuniões de levantamento de requisitos com usuários e liderança para formulários de HelpDesk e melhorias em sistemas internos.",
+        "Implementei e validei entregas junto ao usuário final, medindo sucesso pela satisfação do usuário e cumprimento do escopo definido.",
+        "Organizei chamados e projetos via Microsoft Azure, com controle pessoal de tarefas em Obsidian."
+      ]
+    }
+  ],
+  "lideranca_e_atividades_academicas": [
+    {
+      "cargo": "Coordenador de Eventos",
+      "organizacao": "AWS Students Builders Group – ESUP Goiânia",
+      "local": "Goiânia-GO",
+      "periodo": "2025 – Atual",
+      "bullets": [
+        "Promovo eventos e palestras voltados ao ecossistema AWS, capacitando e instruindo alunos e convidados na utilização de ferramentas e serviços de nuvem.",
+        "Planejo e executo cronograma e organização geral dos eventos, garantindo que tudo aconteça conforme planejado."
+      ]
+    },
+    {
+      "cargo": "Líder de Projeto",
+      "organizacao": "Projetos Extensionistas – ESUP Goiânia",
+      "local": "Goiânia-GO",
+      "periodo": "2025 – Atual",
+      "bullets": [
+        "Lidero grupo em todas as etapas de desenvolvimento de projetos extensionistas de cunho social e voluntário, da concepção à entrega."
+      ]
+    },
+    {
+      "cargo": "Diretor",
+      "organizacao": "Liga Acadêmica de Inovação e Tecnologia – PUC Goiás",
+      "local": "Goiânia-GO",
+      "periodo": "Jul 2023 – Jul 2024",
+      "bullets": [
+        "Promovi eventos educacionais, gerenciando conteúdo em mídias sociais e desenvolvimento de site institucional para melhorar desempenho e visibilidade, engajando participantes para eventos."
+      ]
+    }
+  ],
+  "servicos": [
+    {
+      "nome": "Manutenção e evolução de sistemas",
+      "descricao": "Suporte, correção de bugs e evolução de sistemas em produção, incluindo sistemas legados (Delphi/SQL) e aplicações web modernas."
+    },
+    {
+      "nome": "Criação de sites e landing pages",
+      "descricao": "Design, prototipagem em Figma e desenvolvimento front-end de sites institucionais e landing pages com foco em conversão."
+    },
+    {
+      "nome": "Criação de sistemas web",
+      "descricao": "Desenvolvimento de sistemas de gestão, CRMs e e-commerces sob medida, do levantamento de requisitos à entrega."
+    },
+    {
+      "nome": "Automação de processos",
+      "descricao": "Levantamento e implementação de soluções para automatizar processos internos e ganhar eficiência operacional."
+    },
+    {
+      "nome": "Consultoria em programação e resolução de problemas",
+      "descricao": "Apoio pontual para diagnóstico de bugs, decisões técnicas e destravamento de projetos com problemas de escopo ou execução."
+    },
+    {
+      "nome": "Aulas particulares de programação",
+      "descricao": "Aulas individuais ou em pequenos grupos de lógica de programação, front-end e robótica, para iniciantes e intermediários de todas as idades."
+    }
+  ],
+  "projetos": [
+    {
+      "nome": "Refatoração e manutenção de e-commerce",
+      "contexto": "AWT Development",
+      "tecnologias": ["Javascript", "HTML", "Plataforma Wix"],
+      "descricao": "Refatoração e manutenção completa de e-commerce, entregue dentro do escopo definido com validação positiva do cliente.",
+      "url": null
+    },
+    {
+      "nome": "Landing pages institucionais",
+      "contexto": "AWT Development",
+      "tecnologias": ["React", "Next.js", "Tailwind", "Figma"],
+      "descricao": "Landing pages entregues do design à publicação, com foco em conversão e identidade visual do cliente.",
+      "url": null
+    },
+    {
+      "nome": "Sistema imobiliário (em desenvolvimento)",
+      "contexto": "AWT Development",
+      "tecnologias": ["React", "Next.js", "TypeScript", "SQL"],
+      "descricao": "CRM, catálogo de imóveis e ferramentas de inteligência de negócio para investidores.",
+      "url": null
+    },
+    {
+      "nome": "Aplicativo social de board games (em desenvolvimento)",
+      "contexto": "AWT Development",
+      "tecnologias": ["React", "Next.js", "Node.js", "React Native", "Figma"],
+      "descricao": "Aplicativo social de contagem de pontos para board games.",
+      "url": null
+    },
+    {
+      "nome": "Sistema contábil legado",
+      "contexto": "Tron Informática",
+      "tecnologias": ["Delphi 10.3", "Firebird SQL"],
+      "descricao": "Sustentação, debug e evolução de sistema contábil crítico em produção, com otimização de procedures e triggers.",
+      "url": null
+    }
+  ],
+  "educacao": [
+    {
+      "instituicao": "Fundação Bradesco",
+      "curso": "Certificado de Gestão de Projetos em TI",
+      "periodo": "2026",
+      "modalidade": "Online",
+      "disciplinas_relevantes": [
+        "Metodologias Ágeis",
+        "Gestão de Projetos",
+        "Ciclo de Vida de Projetos",
+        "Levantamento de Requisitos",
+        "Engenharia de Software"
+      ]
+    },
+    {
+      "instituicao": "Escola Associada de Ensino Superior de Goiânia (ESUP)",
+      "curso": "Sistemas de Informação (cursando)",
+      "periodo": "2025-2027",
+      "disciplinas_relevantes": [
+        "Gestão de Projetos",
+        "Governança em TI",
+        "Comunicação Empresarial",
+        "Administração",
+        "Pesquisa Operacional",
+        "Usabilidade de Interfaces",
+        "Inglês Operacional"
+      ]
+    },
+    {
+      "instituicao": "PUC Goiás",
+      "curso": "Ciência da Computação (incompleto)",
+      "periodo": "2022-2024",
+      "disciplinas_relevantes": [
+        "Sistemas Operacionais",
+        "POO",
+        "Lógica de Programação",
+        "Paradigmas de Linguagem de Programação",
+        "Modelagem de Banco de Dados",
+        "Estrutura de Dados",
+        "C++"
+      ]
+    },
+    {
+      "instituicao": "Escola DNC",
+      "curso": "Certificado de Desenvolvedor Front-End",
+      "periodo": "2023-2025",
+      "disciplinas_relevantes": [
+        "HTML",
+        "CSS",
+        "Javascript",
+        "React.js",
+        "UI/UX",
+        "Prototipagem",
+        "Figma",
+        "Typescript",
+        "API Rest"
+      ]
+    }
+  ]
+}
