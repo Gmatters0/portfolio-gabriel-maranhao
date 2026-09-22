@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useState } from "react";
+import { withThemeTransition } from "@/lib/view-transition";
 
 export type Accent = "blue" | "green" | "orange" | "red";
 
@@ -36,8 +37,10 @@ export function AccentProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const setAccent = useCallback((next: Accent) => {
-    setAccentState(next);
-    document.documentElement.setAttribute("data-accent", next);
+    withThemeTransition(() => {
+      setAccentState(next);
+      document.documentElement.setAttribute("data-accent", next);
+    });
     try {
       localStorage.setItem(STORAGE_KEY, next);
     } catch {

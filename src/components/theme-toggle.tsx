@@ -3,6 +3,7 @@
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
+import { withThemeTransition } from "@/lib/view-transition";
 
 export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
@@ -13,7 +14,9 @@ export function ThemeToggle() {
       variant="ghost"
       size="icon"
       aria-label="Alternar tema claro/escuro"
-      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+      onClick={() =>
+        withThemeTransition(() => setTheme(resolvedTheme === "dark" ? "light" : "dark"))
+      }
       className="text-foreground/70 hover:text-foreground"
     >
       {/* Ambos os ícones são renderizados; a classe `dark:` (aplicada pelo script

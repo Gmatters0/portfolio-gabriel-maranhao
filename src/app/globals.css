@@ -177,6 +177,30 @@
   }
 }
 
+/* Wipe de cor ao trocar tema/accent (ver src/lib/view-transition.ts): a captura do
+   estado novo entra com um clip-path animado da direita pra esquerda, revelando as
+   cores novas conforme "passa" pela tela. O brilho é um drop-shadow no próprio
+   pseudo-elemento (não um <div> à parte) porque a API renderiza essas capturas numa
+   camada acima de qualquer elemento normal — um div comum ficaria escondido atrás.
+   drop-shadow (diferente de box-shadow) segue o contorno já recortado pelo
+   clip-path, então o brilho acompanha a borda do wipe do início ao fim. */
+::view-transition-old(root) {
+  animation: none;
+}
+::view-transition-new(root) {
+  animation: theme-wipe 1s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  filter: drop-shadow(-3px 0 3px var(--accent-on-bg)) drop-shadow(-10px 0 22px var(--accent-on-bg));
+}
+
+@keyframes theme-wipe {
+  from {
+    clip-path: inset(0 0 0 100%);
+  }
+  to {
+    clip-path: inset(0 0 0 0%);
+  }
+}
+
 @keyframes loader-out {
   to {
     opacity: 0;
@@ -213,5 +237,11 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
   }
 }
