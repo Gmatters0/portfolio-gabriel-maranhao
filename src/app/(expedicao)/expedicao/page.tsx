@@ -25,11 +25,11 @@ export default function Home() {
       <Marquee items={MARQUEE_ROLES} />
       <About />
       <Pillars />
+      <Projects />
       <Specializations />
       <ExperienceTimeline />
       <Leadership />
       <Services />
-      <Projects />
       <Education />
       <Contact />
     </>

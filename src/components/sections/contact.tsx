@@ -1,19 +1,21 @@
 import { Mail, MessageCircle } from "lucide-react";
+import { BlackHole } from "@/components/pixel/black-hole";
 import { FadeIn } from "@/components/motion/fade-in";
 import { Button } from "@/components/ui/button";
-import { GithubIcon, LinkedinIcon } from "@/components/icons";
-import { buildWhatsAppLink, MAILTO, portfolio, WHATSAPP_DEFAULT_MESSAGE } from "@/data";
+import { Signalscope } from "@/components/signalscope";
+import { buildWhatsAppLink, MAILTO, WHATSAPP_DEFAULT_MESSAGE } from "@/data";
 
 export function Contact() {
   return (
     <section id="contato" className="border-t border-border py-20 sm:py-28">
       <div className="container-page">
         <FadeIn className="relative overflow-hidden rounded-sm border border-[var(--accent-soft-border)] bg-[var(--accent-soft)] px-6 py-16 text-center sm:px-12">
+          <BlackHole className="absolute -right-20 -bottom-24 hidden size-72 opacity-80 lg:block" />
           <span className="inline-flex items-center rounded-full border border-[var(--accent-soft-border)] bg-background px-4 py-1.5 font-mono text-xs tracking-wide text-[var(--accent-on-bg)] uppercase">
             Disponível para novos projetos e oportunidades
           </span>
 
-          <h2 className="mx-auto mt-6 max-w-2xl font-heading text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="mx-auto mt-6 max-w-2xl font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Vamos conversar sobre o seu <span className="text-[var(--accent-on-bg)] italic">próximo projeto</span>?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
@@ -49,26 +51,7 @@ export function Contact() {
             </Button>
           </div>
 
-          <div className="mt-8 flex items-center justify-center gap-4">
-            <a
-              href={portfolio.contato.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn de Gabriel Maranhão"
-              className="flex size-10 items-center justify-center rounded-full border border-border bg-background text-foreground/70 transition-colors hover:text-[var(--accent-on-bg)]"
-            >
-              <LinkedinIcon className="size-5" />
-            </a>
-            <a
-              href={portfolio.contato.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub de Gabriel Maranhão"
-              className="flex size-10 items-center justify-center rounded-full border border-border bg-background text-foreground/70 transition-colors hover:text-[var(--accent-on-bg)]"
-            >
-              <GithubIcon className="size-5" />
-            </a>
-          </div>
+          <Signalscope />
         </FadeIn>
       </div>
     </section>

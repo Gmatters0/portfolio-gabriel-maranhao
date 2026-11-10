@@ -47,10 +47,15 @@ export interface Servico {
 
 export interface Projeto {
   nome: string;
+  /** Empresa ou contexto em que o projeto nasceu (agrupa os projetos no Diário de bordo). */
   contexto: string;
+  /** Formato da entrega: landing page, website, aplicativo… */
+  tipo?: string;
   tecnologias: string[];
   descricao: string;
   url: string | null;
+  imagem?: string;
+  imagem_ajuste?: "cover" | "contain";
 }
 
 export interface Educacao {

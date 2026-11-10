@@ -1,16 +1,27 @@
 "use client";
 
-import { BookOpen, GraduationCap } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState, type CSSProperties } from "react";
 import { SectionHeading } from "@/components/section-heading";
-import { FadeIn } from "@/components/motion/fade-in";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { PixelSprite } from "@/components/pixel/pixel-sprite";
+import { planets, RES } from "@/components/pixel/planets";
 import { portfolio } from "@/data";
+import { cn } from "@/lib/utils";
 
-const ICONS = [GraduationCap, BookOpen];
+// Cada especialização é um dos Gêmeos da Ampulheta, girando um ao redor do outro.
+const TWINS = [
+  { name: "Gêmeo de Cinzas", sprite: planets.ashTwin },
+  { name: "Gêmeo de Brasa", sprite: planets.emberTwin },
+];
+const PERIOD = "28s";
 
 export function Specializations() {
+  const items = portfolio.especializando_atualmente;
+  const [active, setActive] = useState(0);
+  const current = items[active];
+
   return (
-    <section id="especializacoes" className="py-20 sm:py-28">
+    <section id="especializacoes" className="overflow-x-clip py-20 sm:py-28">
       <div className="container-page">
         <SectionHeading
           eyebrow="Especializações atuais"
@@ -19,44 +30,90 @@ export function Specializations() {
           className="mx-auto"
         />
 
-        <FadeIn delay={0.1} className="mx-auto mt-12 max-w-3xl">
-          <Tabs defaultValue={portfolio.especializando_atualmente[0]?.area}>
-            <TabsList className="mx-auto h-auto w-full flex-wrap gap-2 bg-transparent p-0 sm:flex-nowrap">
-              {portfolio.especializando_atualmente.map((item) => (
-                <TabsTrigger
+        <div className="mt-12 grid items-center gap-10 lg:grid-cols-[auto_1fr] lg:gap-16">
+          <div
+            className="group relative mx-auto size-72 sm:size-80"
+            style={{ "--d": "6.4rem" } as CSSProperties}
+          >
+            <div className="absolute inset-0 rounded-full border border-dashed border-border-strong" />
+            {/* Braço do sistema binário: gira; os planetas giram ao contrário para ficarem de pé. */}
+            <div
+              className="absolute inset-0 group-hover:[animation-play-state:paused] motion-reduce:animate-none"
+              style={{ animation: `spin ${PERIOD} linear infinite` }}
+            >
+              <div
+                aria-hidden
+                className="absolute top-1/2 left-1/2 h-1 -translate-x-1/2 -translate-y-1/2 motion-reduce:animate-none"
+                style={{
+                  width: "calc(var(--d) * 2 - 5rem)",
+                  backgroundImage: "repeating-linear-gradient(90deg, #f0d595 0 6px, transparent 6px 12px)",
+                  animation: "sand-flow 0.8s linear infinite",
+                }}
+              />
+              {items.map((item, i) => (
+                <div
                   key={item.area}
-                  value={item.area}
-                  className="h-11 flex-1 rounded-lg border border-border text-sm font-semibold data-active:border-[var(--accent-soft-border)] data-active:bg-[var(--accent-soft)] data-active:text-[var(--accent-on-bg)]"
+                  className="absolute top-1/2 left-1/2"
+                  style={{
+                    transform: `translate(-50%, -50%) translateX(calc(var(--d) * ${i === 0 ? -1 : 1}))`,
+                  }}
                 >
-                  {item.area}
-                </TabsTrigger>
-              ))}
-            </TabsList>
-
-            {portfolio.especializando_atualmente.map((item, i) => {
-              const Icon = ICONS[i % ICONS.length];
-              return (
-                <TabsContent key={item.area} value={item.area} className="mt-6">
-                  <div className="rounded-xl border border-border bg-card p-6 sm:p-8">
-                    <div className="flex items-start gap-4">
-                      <div className="flex size-11 shrink-0 items-center justify-center rounded-lg bg-[var(--accent-soft)] text-[var(--accent-on-bg)]">
-                        <Icon className="size-5" />
-                      </div>
-                      <div>
-                        <h3 className="font-heading text-lg font-semibold text-foreground">
-                          {item.area}
-                        </h3>
-                        <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                          {item.detalhes}
-                        </p>
-                      </div>
-                    </div>
+                  <div
+                    className="group-hover:[animation-play-state:paused] motion-reduce:animate-none"
+                    style={{ animation: `spin-rev ${PERIOD} linear infinite` }}
+                  >
+                    <button
+                      type="button"
+                      onClick={() => setActive(i)}
+                      aria-pressed={active === i}
+                      aria-label={`${TWINS[i].name}: ${item.area}`}
+                      className="flex flex-col items-center gap-2 rounded-sm p-1 outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    >
+                      <span
+                        className={cn(
+                          "block transition-transform duration-300",
+                          active === i ? "scale-125 drop-shadow-[0_0_14px_rgba(255,176,59,0.55)]" : "scale-90 opacity-70 hover:opacity-100"
+                        )}
+                      >
+                        <PixelSprite frames={[TWINS[i].sprite]} scale={7 / RES} />
+                      </span>
+                      <span
+                        className={cn(
+                          "font-mono text-[10px] tracking-widest whitespace-nowrap uppercase",
+                          active === i ? "text-[var(--accent-on-bg)]" : "text-muted-faint"
+                        )}
+                      >
+                        {item.area}
+                      </span>
+                    </button>
                   </div>
-                </TabsContent>
-              );
-            })}
-          </Tabs>
-        </FadeIn>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="min-h-56">
+            <p className="font-mono text-xs tracking-widest text-muted-faint uppercase">
+              Clique em um dos gêmeos · {TWINS[active].name}
+            </p>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={current.area}
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.25 }}
+                className="mt-4 pixel-card p-6 sm:p-8"
+                aria-live="polite"
+              >
+                <h3 className="font-heading text-2xl font-bold text-foreground">{current.area}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                  {current.detalhes}
+                </p>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import { GraduationCap } from "lucide-react";
+import { PixelPlanet } from "@/components/pixel/pixel-planet";
 import { SectionHeading } from "@/components/section-heading";
 import { FadeInStagger, FadeInStaggerItem } from "@/components/motion/fade-in";
 import { Badge } from "@/components/ui/badge";
@@ -6,7 +7,8 @@ import { portfolio } from "@/data";
 
 export function Education() {
   return (
-    <section id="formacao" className="border-t border-border py-20 sm:py-28">
+    <section id="formacao" className="relative overflow-x-clip border-t border-border py-20 sm:py-28">
+      <PixelPlanet kind="giantsDeep" scale={6} top={110} className="left-8 xl:left-20" />
       <div className="container-page">
         <SectionHeading
           eyebrow="Formação"
@@ -18,11 +20,11 @@ export function Education() {
         <FadeInStagger className="mt-14 grid gap-5 sm:grid-cols-2">
           {portfolio.educacao.map((edu) => (
             <FadeInStaggerItem key={`${edu.instituicao}-${edu.curso}`}>
-              <div className="flex h-full gap-4 rounded-sm border border-border bg-card p-6">
+              <div className="flex h-full gap-4 pixel-card p-6">
                 <div className="flex size-11 shrink-0 items-center justify-center rounded-sm bg-[var(--accent-soft)] text-[var(--accent-on-bg)]">
                   <GraduationCap className="size-5" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <h3 className="font-heading text-base font-semibold text-foreground">
                     {edu.curso}
                   </h3>
@@ -39,7 +41,7 @@ export function Education() {
                         <Badge
                           key={d}
                           variant="secondary"
-                          className="cursor-default rounded-sm text-xs font-medium transition-all duration-200 hover:-translate-y-0.5 hover:scale-105 hover:border-[var(--accent-soft-border)] hover:bg-[var(--accent-soft)] hover:text-[var(--accent-on-bg)]"
+                          className="h-auto max-w-full cursor-default rounded-sm py-0.5 text-xs font-medium whitespace-normal transition-all duration-200 hover:-translate-y-0.5 hover:scale-105 hover:border-[var(--accent-soft-border)] hover:bg-[var(--accent-soft)] hover:text-[var(--accent-on-bg)]"
                         >
                           {d}
                         </Badge>

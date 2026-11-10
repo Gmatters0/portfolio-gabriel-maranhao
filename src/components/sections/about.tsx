@@ -1,4 +1,5 @@
 import { SectionHeading } from "@/components/section-heading";
+import { GabbroScene } from "@/components/pixel/gabbro-scene";
 import { FadeIn } from "@/components/motion/fade-in";
 import { Retractable } from "@/components/retractable";
 import { Badge } from "@/components/ui/badge";
@@ -18,11 +19,13 @@ export function About() {
   return (
     <section id="sobre" className="py-20 sm:py-28">
       <div className="container-page grid gap-12 lg:grid-cols-[1fr_1fr] lg:gap-16">
-        <SectionHeading
-          eyebrow="Sobre"
-          title="Base técnica sólida, agora a serviço da gestão de projetos"
-          className="lg:sticky lg:top-24 lg:self-start"
-        />
+        <div className="space-y-10 lg:sticky lg:top-24 lg:self-start">
+          <SectionHeading
+            eyebrow="Sobre"
+            title="Base técnica sólida, agora a serviço da gestão de projetos"
+          />
+          <GabbroScene className="hidden sm:block" />
+        </div>
 
         <FadeIn delay={0.1} className="space-y-8">
           <Retractable teaser={resumoTeaser} labelClosed="Ler resumo completo">

@@ -1,0 +1,376 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-heading: var(--font-display);
+  --font-mono: var(--font-mono);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-accent-on-bg: var(--accent-on-bg);
+  --color-accent-soft: var(--accent-soft);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted-faint: var(--muted-faint);
+  --color-muted: var(--muted);
+  --color-border-strong: var(--border-strong);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --animate-draw-line: draw-line 1.2s ease-out forwards;
+}
+
+/* Base neutra: grafite quase-preto no escuro, bege/off-white quente no claro (tons "escolhidos", não cinza puro). */
+:root {
+  --background: #f4f1ea;
+  --foreground: #14181f;
+  --card: #ffffff;
+  --card-foreground: #14181f;
+  --popover: #ffffff;
+  --popover-foreground: #14181f;
+  --primary: #14181f;
+  --primary-foreground: #f4f1ea;
+  --secondary: #ece7dc;
+  --secondary-foreground: #14181f;
+  --muted: #ece7dc;
+  --muted-foreground: #5b6472;
+  --muted-faint: #8a92a0;
+  --destructive: #b91c1c;
+  --border: rgba(20, 24, 31, 0.1);
+  --border-strong: rgba(20, 24, 31, 0.18);
+  --input: rgba(20, 24, 31, 0.1);
+  --radius: 0.25rem;
+
+  /* Accent padrão: azul institucional */
+  --accent: #1d4ed8;
+  --accent-foreground: #ffffff;
+  --accent-on-bg: #1d4ed8;
+  --accent-soft: color-mix(in srgb, var(--accent-on-bg) 10%, var(--background));
+  --accent-soft-border: color-mix(in srgb, var(--accent-on-bg) 28%, transparent);
+  --ring: var(--accent-on-bg);
+}
+
+.dark {
+  --background: #09090b;
+  --foreground: #ebe6dc;
+  --card: #111114;
+  --card-foreground: #ebe6dc;
+  --popover: #111114;
+  --popover-foreground: #ebe6dc;
+  --primary: #ebe6dc;
+  --primary-foreground: #09090b;
+  --secondary: #17171b;
+  --secondary-foreground: #ebe6dc;
+  --muted: #17171b;
+  --muted-foreground: #a09fa8;
+  --muted-faint: #66666f;
+  --destructive: #f87171;
+  --border: rgba(235, 230, 220, 0.12);
+  --border-strong: rgba(235, 230, 220, 0.22);
+  --input: rgba(235, 230, 220, 0.14);
+}
+
+/* --- Accents: 4 cores de apoio, comutáveis via data-accent no <html> --- */
+/* Tons "700" garantem contraste AA (>=4.5:1) com texto branco em botões sólidos, nos dois temas. */
+:root[data-accent="blue"] {
+  --accent: #1d4ed8;
+  --accent-foreground: #ffffff;
+  --accent-on-bg: #1d4ed8;
+}
+:root[data-accent="green"] {
+  --accent: #047857;
+  --accent-foreground: #ffffff;
+  --accent-on-bg: #047857;
+}
+:root[data-accent="orange"] {
+  --accent: #c2410c;
+  --accent-foreground: #ffffff;
+  --accent-on-bg: #c2410c;
+}
+:root[data-accent="red"] {
+  --accent: #b91c1c;
+  --accent-foreground: #ffffff;
+  --accent-on-bg: #b91c1c;
+}
+
+/* No escuro, o texto/ícones "soltos" no fundo usam um tom mais claro do accent para manter AA. */
+.dark[data-accent="blue"] {
+  --accent-on-bg: #60a5fa;
+}
+.dark[data-accent="green"] {
+  --accent-on-bg: #34d399;
+}
+.dark[data-accent="orange"] {
+  --accent-on-bg: #fb923c;
+}
+.dark[data-accent="red"] {
+  --accent-on-bg: #f87171;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans scroll-smooth;
+  }
+  ::selection {
+    background: var(--accent-soft);
+    color: var(--accent-on-bg);
+  }
+}
+
+@layer utilities {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+}
+
+@keyframes draw-line {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes letter-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.4em);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rule-fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Wipe de cor ao trocar tema/accent (ver src/lib/view-transition.ts): a captura do
+   estado novo entra com um clip-path animado da direita pra esquerda, revelando as
+   cores novas conforme "passa" pela tela. O brilho é um drop-shadow no próprio
+   pseudo-elemento (não um <div> à parte) porque a API renderiza essas capturas numa
+   camada acima de qualquer elemento normal — um div comum ficaria escondido atrás.
+   drop-shadow (diferente de box-shadow) segue o contorno já recortado pelo
+   clip-path, então o brilho acompanha a borda do wipe do início ao fim. */
+::view-transition-old(root) {
+  animation: none;
+}
+::view-transition-new(root) {
+  animation: theme-wipe 1s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  filter: drop-shadow(-3px 0 3px var(--accent-on-bg)) drop-shadow(-10px 0 22px var(--accent-on-bg));
+}
+
+@keyframes theme-wipe {
+  from {
+    clip-path: inset(0 0 0 100%);
+  }
+  to {
+    clip-path: inset(0 0 0 0%);
+  }
+}
+
+@keyframes loader-out {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes caret-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
+
+/* ---------- Observatório Pixel ---------- */
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Grão + scanlines leves por cima de tudo (como as referências de textura em filme). */
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.05;
+  background: repeating-linear-gradient(to bottom, transparent 0 2px, #000 2px 3px);
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: var(--tw-lo, 0.35); }
+  50% { opacity: 1; }
+}
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes flame-a {
+  0%, 49.9% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+@keyframes flame-b {
+  0%, 49.9% { opacity: 0; }
+  50%, 100% { opacity: 1; }
+}
+@keyframes fire-glow {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.08); }
+}
+@keyframes spark-rise {
+  0% { transform: translate(0, 0); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: translate(var(--dx, 8px), -90px); opacity: 0; }
+}
+
+/* Fonte pixel sem negrito: o negrito sintético borra os pixels. */
+.font-heading, h1, h2, h3 {
+  font-synthesis: none;
+}
+
+@keyframes hammock {
+  0%, 100% { transform: rotate(-1.6deg); }
+  50% { transform: rotate(1.6deg); }
+}
+
+/* Cartão estilo pixel: borda grossa e sombra dura. */
+.pixel-card {
+  border: 2px solid var(--border-strong);
+  background: var(--card);
+  box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 0.55);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.pixel-card:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 0 rgba(0, 0, 0, 0.55);
+  border-color: var(--accent-soft-border);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes spin-rev {
+  to { transform: rotate(-360deg); }
+}
+/* Areia escorrendo do Gêmeo de Cinzas para o de Brasa. */
+@keyframes sand-flow {
+  to { background-position: 24px 0; }
+}
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(600%); }
+}
+@keyframes blip {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.8); opacity: 0.4; }
+}
+@keyframes led {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0.25; }
+}
+@keyframes supernova {
+  0% { transform: scale(0.05); opacity: 1; }
+  60% { opacity: 1; }
+  100% { transform: scale(40); opacity: 1; }
+}
+@keyframes fade-out {
+  to { opacity: 0; }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes shooting-star {
+  0% { transform: rotate(-24deg) translateX(0); opacity: 0; }
+  12% { opacity: 1; }
+  100% { transform: rotate(-24deg) translateX(-48vw); opacity: 0; }
+}
+
+@keyframes nomai-reveal {
+  0% { clip-path: inset(0 100% 0 0); filter: blur(3px); opacity: 0.4; }
+  100% { clip-path: inset(0 0 0 0); filter: blur(0); opacity: 1; }
+}
+@keyframes nomai-draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes dash {
+  to { stroke-dashoffset: -22; }
+}

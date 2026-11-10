@@ -1,4 +1,5 @@
 import { Award, CalendarDays, Users } from "lucide-react";
+import { PixelPlanet } from "@/components/pixel/pixel-planet";
 import { SectionHeading } from "@/components/section-heading";
 import { FadeInStagger, FadeInStaggerItem } from "@/components/motion/fade-in";
 import { portfolio } from "@/data";
@@ -7,7 +8,8 @@ const ICONS = [Users, Award, CalendarDays];
 
 export function Leadership() {
   return (
-    <section id="lideranca" className="border-t border-border py-20 sm:py-28">
+    <section id="lideranca" className="relative overflow-x-clip border-t border-border py-20 sm:py-28">
+      <PixelPlanet kind="brittleHollow" scale={6} top={110} className="right-8 xl:right-20" />
       <div className="container-page">
         <SectionHeading
           eyebrow="Liderança e atividades acadêmicas"
@@ -22,7 +24,7 @@ export function Leadership() {
             const Icon = ICONS[i % ICONS.length];
             return (
               <FadeInStaggerItem key={`${item.organizacao}-${item.cargo}`}>
-                <div className="flex h-full flex-col gap-4 rounded-sm border border-border bg-card p-6">
+                <div className="flex h-full flex-col gap-4 pixel-card p-6">
                   <div className="flex size-10 items-center justify-center rounded-sm bg-[var(--accent-soft)] text-[var(--accent-on-bg)]">
                     <Icon className="size-5" />
                   </div>
