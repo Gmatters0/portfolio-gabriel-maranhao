@@ -1,3 +1,5 @@
+import { Campfire } from "@/components/pixel/campfire";
+import { LoopClock } from "@/components/loop-clock";
 import { Mail, MessageCircle } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
 import { MAILTO, buildWhatsAppLink, WHATSAPP_DEFAULT_MESSAGE, portfolio } from "@/data";
@@ -13,7 +15,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border bg-background">
+    <footer className="border-t border-border">
       <div className="container-page flex flex-col gap-8 py-12">
         <div className="flex flex-col justify-between gap-8 sm:flex-row">
           <div className="max-w-sm">
@@ -74,9 +76,20 @@ export function Footer() {
           </div>
         </div>
 
-        <p className="border-t border-border pt-6 font-mono text-xs text-muted-faint">
-          © {year} {portfolio.nome}. Todos os direitos reservados.
+        <div className="flex flex-col gap-2 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="font-mono text-xs text-muted-faint">
+            © {year} {portfolio.nome}. Todos os direitos reservados.
+          </p>
+          <LoopClock />
+        </div>
+
+        <p className="max-w-3xl text-xs leading-relaxed text-muted-faint">
+          O Modo Expedição é uma homenagem de fã, sem fins lucrativos, ao jogo <em>Outer Wilds</em>. Outer Wilds e
+          todos os direitos relacionados pertencem à Mobius Digital. Trilha sonora &ldquo;Travelers&rdquo; por Andrew
+          Prahlow.
         </p>
+
+        <Campfire />
       </div>
     </footer>
   );

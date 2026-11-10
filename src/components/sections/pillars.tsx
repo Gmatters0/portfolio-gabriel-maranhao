@@ -1,6 +1,7 @@
 import { Bug, ClipboardList, Code2, GraduationCap, PenTool, type LucideIcon } from "lucide-react";
+import { PixelPlanet } from "@/components/pixel/pixel-planet";
 import { SectionHeading } from "@/components/section-heading";
-import { NumberedList } from "@/components/numbered-list";
+import { PillarConstellation } from "@/components/pillar-constellation";
 import { portfolio } from "@/data";
 
 const ICONS: Record<string, LucideIcon> = {
@@ -13,7 +14,8 @@ const ICONS: Record<string, LucideIcon> = {
 
 export function Pillars() {
   return (
-    <section id="pilares" className="border-t border-border py-20 sm:py-28">
+    <section id="pilares" className="relative overflow-x-clip border-t border-border py-20 sm:py-28">
+      <PixelPlanet kind="darkBramble" scale={6} top={120} className="right-10 xl:right-24" />
       <div className="container-page">
         <SectionHeading
           eyebrow="Áreas de atuação"
@@ -22,13 +24,16 @@ export function Pillars() {
         />
 
         <div className="mt-12 max-w-3xl">
-          <NumberedList
-            items={portfolio.pilares_de_atuacao.map((pilar) => ({
-              key: pilar.titulo,
-              title: pilar.titulo,
-              description: pilar.descricao,
-              icon: ICONS[pilar.titulo] ?? Code2,
-            }))}
+          <PillarConstellation
+            items={portfolio.pilares_de_atuacao.map((pilar) => {
+              const Icon = ICONS[pilar.titulo] ?? Code2;
+              return {
+                key: pilar.titulo,
+                title: pilar.titulo,
+                description: pilar.descricao,
+                icon: <Icon className="size-4 shrink-0 text-[var(--accent-on-bg)]" />,
+              };
+            })}
           />
         </div>
       </div>

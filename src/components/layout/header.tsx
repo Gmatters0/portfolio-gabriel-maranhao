@@ -4,16 +4,16 @@ import { useEffect, useState } from "react";
 import { Menu, MessageCircle, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AccentSwitcher } from "@/components/accent-switcher";
-import { ThemeToggle } from "@/components/theme-toggle";
+import { ModeSwitch } from "@/components/mode-switch";
 import { buildWhatsAppLink, WHATSAPP_DEFAULT_MESSAGE } from "@/data";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
   { href: "#sobre", label: "Sobre" },
+  { href: "#projetos", label: "Projetos" },
   { href: "#especializacoes", label: "Especializações" },
   { href: "#experiencia", label: "Experiência" },
   { href: "#servicos", label: "Serviços" },
-  { href: "#projetos", label: "Projetos" },
   { href: "#contato", label: "Contato" },
 ];
 
@@ -58,8 +58,8 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
+          <ModeSwitch mode="expedicao" labelClassName="max-xl:sr-only" />
           <AccentSwitcher />
-          <ThemeToggle />
           <Button
             render={
               <a
@@ -78,7 +78,7 @@ export function Header() {
         </div>
 
         <div className="flex items-center gap-2 lg:hidden">
-          <ThemeToggle />
+          <ModeSwitch mode="expedicao" labelClassName="max-sm:sr-only" className="mr-1" />
           <Button
             type="button"
             variant="ghost"

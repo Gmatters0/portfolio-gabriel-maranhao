@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useState } from "react";
+import { ACCENT_STORAGE_KEY, accentInitScript } from "@/lib/accent-init";
 import { withThemeTransition } from "@/lib/view-transition";
 
 export type Accent = "blue" | "green" | "orange" | "red";
@@ -12,8 +13,8 @@ export const ACCENTS: { value: Accent; label: string; swatch: string }[] = [
   { value: "red", label: "Vermelho", swatch: "#b91c1c" },
 ];
 
-const STORAGE_KEY = "portfolio-accent";
-const DEFAULT_ACCENT: Accent = "blue";
+const STORAGE_KEY = ACCENT_STORAGE_KEY;
+const DEFAULT_ACCENT: Accent = "orange";
 
 type AccentContextValue = {
   accent: Accent;
@@ -22,8 +23,8 @@ type AccentContextValue = {
 
 const AccentContext = createContext<AccentContextValue | undefined>(undefined);
 
-// Script injetado antes da hidratação para aplicar o accent salvo sem "flash" de cor errada.
-export const ACCENT_INIT_SCRIPT = `(function(){try{var a=localStorage.getItem("${STORAGE_KEY}");var v=(a==="blue"||a==="green"||a==="orange"||a==="red")?a:"${DEFAULT_ACCENT}";document.documentElement.setAttribute("data-accent",v);}catch(e){}})();`;
+// Script anti-flash do accent padrão da Expedição (o gerador fica em lib/accent-init).
+export const ACCENT_INIT_SCRIPT = accentInitScript(DEFAULT_ACCENT);
 
 export function AccentProvider({ children }: { children: React.ReactNode }) {
   const [accent, setAccentState] = useState<Accent>(DEFAULT_ACCENT);

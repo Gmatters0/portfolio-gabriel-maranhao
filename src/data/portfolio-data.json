@@ -52,7 +52,7 @@
       "Adaptabilidade",
       "Organização",
       "Didática",
-	  "Inteligência Emocional"
+      "Inteligência Emocional"
     ]
   },
   "pilares_de_atuacao": [
@@ -193,37 +193,103 @@
   ],
   "projetos": [
     {
-      "nome": "Refatoração e manutenção de e-commerce",
+      "nome": "Azus Imobiliária",
       "contexto": "AWT Development",
-      "tecnologias": ["Javascript", "HTML", "Plataforma Wix"],
-      "descricao": "Refatoração e manutenção completa de e-commerce, entregue dentro do escopo definido com validação positiva do cliente.",
-      "url": null
+      "tipo": "Plataforma imobiliária",
+      "tecnologias": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "SQL"
+      ],
+      "descricao": "Landing page pública de plataforma imobiliária com mapa de áreas por procura e valorização. O sistema completo (CRM, catálogo e inteligência de mercado) segue em desenvolvimento.",
+      "url": "https://azusimobiliaria.com.br/",
+      "imagem": "/projects/azus-imobiliaria.webp"
     },
     {
-      "nome": "Landing pages institucionais",
+      "nome": "Isotelhas Tapajós",
       "contexto": "AWT Development",
-      "tecnologias": ["React", "Next.js", "Tailwind", "Figma"],
-      "descricao": "Landing pages entregues do design à publicação, com foco em conversão e identidade visual do cliente.",
-      "url": null
+      "tipo": "Landing page",
+      "tecnologias": [],
+      "descricao": "Landing page para representante autorizado de coberturas termoacústicas, com catálogo de soluções, showroom e contato direto por WhatsApp.",
+      "url": "http://isotelhastapajos.com.br/",
+      "imagem": "/projects/isotelhas-tapajos.webp"
     },
     {
-      "nome": "Sistema imobiliário (em desenvolvimento)",
+      "nome": "Miami Sports",
       "contexto": "AWT Development",
-      "tecnologias": ["React", "Next.js", "TypeScript", "SQL"],
-      "descricao": "CRM, catálogo de imóveis e ferramentas de inteligência de negócio para investidores.",
-      "url": null
+      "tipo": "Website",
+      "tecnologias": [
+        "Cloudflare Workers"
+      ],
+      "descricao": "Site bilíngue (EN/PT) de agência de esporte e talentos que conecta jovens atletas a oportunidades e bolsas nos Estados Unidos. O domínio final será atualizado.",
+      "url": "https://miami-sports-website.miami-sports-website.workers.dev/",
+      "imagem": "/projects/miami-sports.webp"
+    },
+    {
+      "nome": "Lucca",
+      "contexto": "AWT Development",
+      "tipo": "Website",
+      "tecnologias": [],
+      "descricao": "Site pessoal de artista com identidade visual própria, seções de sobre, vídeos e contato.",
+      "url": "https://iamlucca.com/",
+      "imagem": "/projects/lucca.webp"
+    },
+    {
+      "nome": "Soul Seller Clothing",
+      "contexto": "AWT Development",
+      "tipo": "E-commerce",
+      "tecnologias": [
+        "Javascript",
+        "HTML",
+        "Plataforma Wix"
+      ],
+      "descricao": "Refatoração e manutenção completa de e-commerce de moda, entregue dentro do escopo definido com validação positiva do cliente.",
+      "url": "https://www.soulsellerclothing.com/",
+      "imagem": "/projects/soul-seller.webp"
+    },
+    {
+      "nome": "Gerador de contratos automático",
+      "contexto": "Sistema interno",
+      "tecnologias": [],
+      "descricao": "Formulário que calcula valores sozinho e gera o contrato final em PDF. Uso privado, sem link público.",
+      "url": null,
+      "imagem": "/projects/gerador-contratos.webp"
+    },
+    {
+      "nome": "Álbum de figurinhas",
+      "contexto": "Tron Informática",
+      "tipo": "Aplicativo",
+      "tecnologias": [
+        "FlutterFlow"
+      ],
+      "descricao": "Aplicativo de álbum de figurinhas construído em FlutterFlow. Uso privado, sem link público.",
+      "url": null,
+      "imagem": "/projects/tron-logo.png",
+      "imagem_ajuste": "contain"
     },
     {
       "nome": "Aplicativo social de board games (em desenvolvimento)",
       "contexto": "AWT Development",
-      "tecnologias": ["React", "Next.js", "Node.js", "React Native", "Figma"],
+      "tipo": "Aplicativo",
+      "tecnologias": [
+        "React",
+        "Next.js",
+        "Node.js",
+        "React Native",
+        "Figma"
+      ],
       "descricao": "Aplicativo social de contagem de pontos para board games.",
       "url": null
     },
     {
       "nome": "Sistema contábil legado",
       "contexto": "Tron Informática",
-      "tecnologias": ["Delphi 10.3", "Firebird SQL"],
+      "tipo": "Sistema legado",
+      "tecnologias": [
+        "Delphi 10.3",
+        "Firebird SQL"
+      ],
       "descricao": "Sustentação, debug e evolução de sistema contábil crítico em produção, com otimização de procedures e triggers.",
       "url": null
     }

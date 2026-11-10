@@ -46,7 +46,7 @@ export function Carousel({
 
   return (
     <div className={className}>
-      <div className="overflow-hidden" ref={emblaRef}>
+      <div className="overflow-hidden pr-1 pb-2" ref={emblaRef}>
         <div className="-ml-4 flex">
           {slides.map((slide, i) => (
             <div key={i} className={cn("min-w-0 shrink-0 grow-0 pl-4", slideClassName)}>
